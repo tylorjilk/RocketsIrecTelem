@@ -44,7 +44,8 @@ void setup() {
   IPAddress dns(192, 168, 4, 1);
   IPAddress gateway(192, 168, 4, 1);
   IPAddress subnet(255, 255, 255, 0);
-  WiFi.softAPConfig(ip, gateway, subnet);
+  WiFi.config(ip,dns,gateway,subnet);
+  //WiFi.softAPConfig(ip, gateway, subnet);
   WiFi.begin(SkybassAP, WiFiAPPSK);
   server.begin();
   Serial.println("Ready");
